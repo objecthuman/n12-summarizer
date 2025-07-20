@@ -19,5 +19,4 @@ intents.message_content = True
 
 client = SummarizerClient(intents=intents)
 
-
 client.run(settings.BOT_TOKEN)
