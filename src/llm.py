@@ -51,7 +51,6 @@ def summarize_with_query(messages: list[str], query: str) -> str:
         qa = RetrievalQA.from_chain_type(llm=llm, retriever=retriever)
         return qa.invoke(query)["result"]
 
-    #  If no query , do general summarization
     else:
         summarize_chain = load_summarize_chain(llm, chain_type="stuff")
         result = summarize_chain.invoke(docs)
